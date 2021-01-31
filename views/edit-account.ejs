@@ -1,0 +1,26 @@
+<%- include ("partials/head.ejs") %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h3>Edit Account</h3>
+        </div>
+        <hr/>
+    </div>
+   <!-- <%= JSON.stringify(account) %>  -->
+    <div class="row">
+        <div class="col-10 offset-1">
+      <form action="/save-account" method="POST">
+        <input type="hidden" value="<%=account._id%>" name="id">
+        <input type="text" name="first_name" class="form-control" placeholder="First Name" value="<%=account.first_name%> "><br>
+        <input type="text" name="last_name" class="form-control" placeholder="Last Name" value="<%= account.last_name %> "><br>
+        <input type="email" name="email" class="form-control" placeholder="Email"  value="<%= account.email %> "><br>
+        <input type="text" name="phone" class="form-control" placeholder="Phone" value="<%= account.phone %> "><br>
+        <button type="submit" class="btn btn-primary form-control">Save changes</button>
+    </form>
+        </div>
+    </div>
+   
+</div>
+<%- include ("partials/footer.ejs") %>
